@@ -1,0 +1,7 @@
+{
+  "name": "plus-ultra",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
