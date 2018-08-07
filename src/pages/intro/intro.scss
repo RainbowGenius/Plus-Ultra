@@ -1,0 +1,23 @@
+page-intro {
+    .slide-intro {
+        display: unset;
+    }
+    .slide-intro a {
+        position: absolute;
+        left: 272px;
+        top: 10px;
+        font-size: 15px;
+    }
+    .slide-intro img {
+        width: 240px;
+        padding: 20px;
+        position: relative;
+        top: 15px;
+    }
+    .slide-intro p {
+        font-size: 15px;
+        text-align: justify;
+        padding: 20px;
+        font-weight: 100;
+    }
+}
