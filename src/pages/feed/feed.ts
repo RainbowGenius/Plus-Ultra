@@ -14,12 +14,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'feed.html',
 })
 export class FeedPage {
-
+  public user_name:string = "Bira Chamma";
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+
+  public myFirstPlus (num1:number, num2:number): void {
+    alert(num1 + num2);
+  }
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FeedPage');
+    // this.myFirstPlus(10, 99);
+
   }
 
 }
