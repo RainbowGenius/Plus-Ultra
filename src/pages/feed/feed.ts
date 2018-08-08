@@ -19,14 +19,10 @@ import { MoovieProvider } from '../../providers/moovie/moovie';
 })
 export class FeedPage {
   public object_feed = {
-    title: "Feed",
-    user_name: "Bira Chamma",
-    user_comment: "Marty McFly",
-    date: "November 6, 1955",
-    likes_quant: 12,
-    comments: 4,
     time_ago: 12
   }
+
+  public movie_list = new Array<any>();
 
   // public user_name:string = "Bira Chamma";
   constructor(
@@ -43,10 +39,8 @@ export class FeedPage {
   ionViewDidLoad() {
     this.movieProvider.getLastestMovie().subscribe (
         data => {
-          // const response = (data as any);
-          // const object_response = JSON.parse(response._body);
-          // console.log(object_response);
-          console.log (data);
+          this.movie_list = data['results'];
+          console.log ("Filmes populares:",this.movie_list);
         }, error => {
           console.log(error);
         }

@@ -17,7 +17,7 @@ private baseApiPath = "https://api.themoviedb.org/3";
   }
 
   getLastestMovie() {
-    return this.http.get(this.baseApiPath+"/movie/353081?api_key="+this.getApiKey())
+    return this.http.get(this.baseApiPath+"/movie/popular?api_key="+this.getApiKey())
     // return this.http.get(`${this.baseApiPath}/movie/353081?api_key=${this.getApiKey()}`)
   }
 
