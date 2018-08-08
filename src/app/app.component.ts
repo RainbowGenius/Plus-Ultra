@@ -5,17 +5,28 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { IntroPage } from '../pages/intro/intro';
+import { UserConfigProvider } from '../providers/user_config/user_config';
+
+
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  providers: [
+    UserConfigProvider
+  ]
 })
 export class MyApp {
   rootPage:any = IntroPage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, UserConfigProvider: UserConfigProvider) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
+      let config = UserConfigProvider.getConfigData();
+      if(config == null) {
+        this.rootPage = IntroPage;
+        UserConfigProvider.setConfigData(false);
+      } else {
+        this.rootPage = TabsPage;
+      }
       statusBar.styleDefault();
       splashScreen.hide();
     });
